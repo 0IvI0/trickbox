@@ -1,0 +1,38 @@
+# Design notes - TO BE DELETED #
+myNotes.txt
+
+
+# IDEs and editors #
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# VS code related #
+.vscode/*
+.history/*
+
+# System files #
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+#  Packages #
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+*.log
+*.sql
+*.sqlite
