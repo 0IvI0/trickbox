@@ -24,7 +24,6 @@ window.addEventListener('mousemove', (event) => {
 	}
 	if (cursorY > pupilsY - 8 && cursorY < pupilsY + pupilsHeight) {
 		//pupils stay centered
-		console.log('y: ');
 		pupils.setAttribute('y', '' - 5);
 	} else if (cursorY < pupilsY) {
 		//pupils moves 2 px up
