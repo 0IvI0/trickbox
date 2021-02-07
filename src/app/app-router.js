@@ -52,7 +52,7 @@ Router.prototype = {
     },
     goToRoute: function (htmlPath) {
         (function(scope) {
-            var url = 'app/modules/*/' + htmlPath,
+            var url = 'src/app/modules/' + htmlPath,
             xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {

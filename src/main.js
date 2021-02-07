@@ -1,6 +1,8 @@
+"use strict";
+
 /****** LOGO ANIMATION ON MOUSE EVENT ******/
 
-let pupils = document.querySelector('#pupilsSvg');
+var pupils = document.querySelector('#pupilsSvg');
 var pupilsBoundingRect = pupils.getBoundingClientRect();
 var pupilsX = pupilsBoundingRect.left;
 var pupilsY = pupilsBoundingRect.top;
@@ -34,4 +36,3 @@ window.addEventListener('mousemove', (event) => {
 	}
 });
 
-/****** END OF LOGO ANIMATION ON MOUSE EVENT ******/
