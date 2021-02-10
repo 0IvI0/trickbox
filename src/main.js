@@ -9,7 +9,17 @@ var pupilsY = pupilsBoundingRect.top;
 var pupilsWidth = pupilsBoundingRect.width;
 var pupilsHeight = pupilsBoundingRect.height;
 
+var valuePageY = window.pageYOffset;
+
 window.addEventListener('mousemove', (event) => {
+
+    //To avoid calculating the position of pupils on every mouse movement and thus rendering delays if pageY is te same:
+    if (window.pageYOffset != valuePageY) {
+        pupilsBoundingRect = pupils.getBoundingClientRect();
+        pupilsY = pupilsBoundingRect.top;
+        pupilsHeight = pupilsBoundingRect.height;
+        valuePageY = window.pageYOffset;
+    }
 
 	var cursorX = event.clientX;
 	var cursorY = event.clientY;
@@ -35,4 +45,3 @@ window.addEventListener('mousemove', (event) => {
 		pupils.setAttribute('y', '' + 1);
 	}
 });
-
