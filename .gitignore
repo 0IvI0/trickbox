@@ -31,8 +31,13 @@ ehthumbs.db
 *.rar
 *.tar
 *.zip
+*.tgz
 
 # Logs and databases #
 *.log
+npm-debug.log*
 *.sql
 *.sqlite
+
+# Node modules
+node_modules/

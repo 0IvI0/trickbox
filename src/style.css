@@ -1,27 +1,56 @@
+@import 'app/modules/home/home.css';
+@import 'app/modules/about/about.css';
+
 :root {
     font-size: 1.069vw;    /* (font-size: 16px;) */
-    font-family: Arial, Helvetica, sans-serif;
+    --font-family: Georgia, 'Times New Roman', Times, serif;
     --font-title: cooper-black-std, sans-serif;
     --font-style: normal;
     --font-weight-title: 400;
+    --line-height-normal: 1.6;
     --text-primary: #eeeeee;
     --text-secondary: #2b2b2b;
     --text-link: #CC3366;
     --text-activeLink: #2DA7B5;
     --bg-light: #e9e9e9;
     --bg-dark: #2b2b2b;
+    --footer-bg-color: #525252;
     --icon-height: 1.2vw;
 }
 
 body {
-    color: #000000;
+    color: var(--text-primary);
     background-color: var(--bg-dark);
+    font-family: var(--font-family);
+    font-weight: 200;
     margin: 0;
     padding: 0;
 }
 
+#app {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.page-title {
+    margin-top: 3%;
+    margin-bottom: 1%;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.page-body {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: var(--line-height-normal);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
 #noScript {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
     color: #CC3366;
     font-weight: bold;
 }
@@ -40,9 +69,11 @@ body {
 }
 
 #navbar {
-    margin: 0;
-    padding-top: 1%;
-    padding-bottom: 2%;
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: var(--bg-dark);
+    top: 1%;
+    margin: 2%;
     padding-left: auto;
     padding-right: 18%;
 }
@@ -61,7 +92,7 @@ body {
 }
 
 .nav-li a {
-    color: #CC3366;
+    color: var(--text-link);
     text-align: center;
     text-decoration: none;
     font-family: var(--font-title);
@@ -90,6 +121,14 @@ span {
 
 .menu-icon {
     max-height: var(--icon-height);
+}
+
+#page-footer {
+    text-align: center;
+    padding: 2%;
+    margin-top: 5%;
+    background-color: var(--footer-bg-color);
+    font-size: 1rem;
 }
 
 
