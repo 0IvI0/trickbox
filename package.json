@@ -1,0 +1,26 @@
+{
+  "name": "trickbox",
+  "version": "1.0.0",
+  "description": "Built of pieces to showcase the power of HTML, CSS and JS. More and more features are going to be added to the project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0IvI0/trickbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0IvI0/trickbox/issues"
+  },
+  "homepage": "https://github.com/0IvI0/trickbox#index.html",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
