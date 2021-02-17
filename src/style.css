@@ -8,11 +8,11 @@
     --font-style: normal;
     --font-weight-title: 400;
     --line-height-normal: 1.6;
-    --text-primary: #eeeeee;
+    --text-primary: #e0dfdf;
     --text-secondary: #2b2b2b;
     --text-link: #CC3366;
     --text-activeLink: #2DA7B5;
-    --bg-light: #e9e9e9;
+    --bg-light: #e0dfdf;
     --bg-dark: #2b2b2b;
     --footer-bg-color: #525252;
     --icon-height: 1.2vw;
@@ -28,11 +28,21 @@ body {
 .darkTheme {
     background-color: var(--bg-dark);
     color: var(--text-primary);
+    transition: background-color 250ms ease-in-out, color 500ms ease-in-out;
+}
+
+.darkTheme #svgThemeSwitcher {
+    transform: rotate(-50deg);
+}
+
+.lightTheme #svgThemeSwitcher {
+    transform: rotate(40deg);
 }
 
 .lightTheme {
     background-color: var(--bg-light);
     color: var(--text-secondary);
+    transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
 #app {
@@ -139,7 +149,8 @@ span {
     list-style-type: none;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 0.5rem;
-    margin: 0;
+    margin: 0.5rem;
+    z-index: 2;
     text-align:left;
 }
 
@@ -156,6 +167,51 @@ span {
     display: block;
 }
 
+
+/* Tooltip */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltipText {
+    visibility: hidden;
+    width: fit-content;
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: 0.8rem;
+    text-align: center;
+    white-space: nowrap;
+    padding: 5px 5px;
+    border-radius: 6px;
+    top: 100%;
+    left: 50%;
+    margin-left: -15px;
+}
+
+.tooltip .tooltipText::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* Arrow at the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+
+  .tooltip:hover .tooltipText {
+    visibility: visible;
+  }
+
+
+
+/* Footer */
+
 #page-footer {
     text-align: center;
     padding: 2%;
@@ -167,25 +223,45 @@ span {
 }
 
 
+
 /* Scrollbar width */
 ::-webkit-scrollbar {
     width: 10px;
 }
-
 /* Track color */
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
-
 /* Handle color */
 ::-webkit-scrollbar-thumb {
     background: #1F77A6;
     height: 50%;
     border-radius: 10px;
 }
-
 /* Handle color on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #2DA7B5;
+}
+
+
+
+/* Theme switcher icon */
+
+#themeSwitcher {
+    margin-right: 30rem;
+}
+.themeStroke {
+    stroke:black;
+    stroke-width:0.9;
+    stroke-miterlimit:22.9256;
+}
+.fil-base {
+    fill: #660066;
+}
+.fil-moon {
+    fill: #2DA7B5;
+}
+.fil-sun {
+    fill:#E0A70B;
 }

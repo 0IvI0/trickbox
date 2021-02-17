@@ -2,14 +2,14 @@
 
 /****** LOGO ANIMATION ON MOUSE EVENT ******/
 
-var pupils = document.querySelector('#pupilsSvg');
-var pupilsBoundingRect = pupils.getBoundingClientRect();
-var pupilsX = pupilsBoundingRect.left;
-var pupilsY = pupilsBoundingRect.top;
-var pupilsWidth = pupilsBoundingRect.width;
-var pupilsHeight = pupilsBoundingRect.height;
+const pupils = document.querySelector('#pupilsSvg');
+let pupilsBoundingRect = pupils.getBoundingClientRect();
+let pupilsX = pupilsBoundingRect.left;
+let pupilsY = pupilsBoundingRect.top;
+let pupilsWidth = pupilsBoundingRect.width;
+let pupilsHeight = pupilsBoundingRect.height;
 
-var valuePageY = window.pageYOffset;
+let valuePageY = window.pageYOffset;
 
 window.addEventListener('mousemove', (event) => {
 
@@ -21,8 +21,8 @@ window.addEventListener('mousemove', (event) => {
         valuePageY = window.pageYOffset;
     }
 
-	var cursorX = event.clientX;
-	var cursorY = event.clientY;
+	let cursorX = event.clientX;
+	let cursorY = event.clientY;
 
 	if (cursorX < pupilsX) {
 		//pupils moves 2 px left 		pupilsX -= 2;
@@ -45,3 +45,35 @@ window.addEventListener('mousemove', (event) => {
 		pupils.setAttribute('y', '' + 1);
 	}
 });
+
+
+
+/****** THEME SWITCH EVENT - DARK/LIGHT THEME ******/
+
+const themeSwitcher = document.querySelector('#themeSwitcher');
+const svgThemeSwitcher = document.querySelector('#svgThemeSwitcher');
+const body = document.body;
+const navbar = document.querySelector('#navbar');
+const dropdownList = document.querySelector('.dropdownList');
+
+const theme = localStorage.getItem('theme');
+
+if (theme) {
+    body.classList.add(theme);
+    navbar.classList.add(theme);
+    dropdownList.classList.add(theme);
+}
+
+themeSwitcher.onclick = () => {
+    if (body.classList.contains('darkTheme')) {
+        body.classList.replace('darkTheme', 'lightTheme');
+        navbar.classList.replace('darkTheme', 'lightTheme');
+        dropdownList.classList.replace('darkTheme', 'lightTheme');
+        localStorage.setItem('theme', 'lightTheme');
+    } else if (body.classList.contains('lightTheme')) {
+        body.classList.replace('lightTheme', 'darkTheme');
+        navbar.classList.replace('lightTheme', 'darkTheme');
+        dropdownList.classList.replace('lightTheme', 'darkTheme');
+        localStorage.setItem('theme', 'darkTheme');
+    }
+}
